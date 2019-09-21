@@ -1,10 +1,12 @@
 class Todo {
-  constructor (title, desc, dueDate, priority, isComplete=false) {
+  constructor (title, desc, dueDate, priority, isComplete=false, folder='default') {
     this.title = title;
     this.desc = desc;
     this.dueDate = dueDate;
     this.priority = priority;
     this.isComplete = isComplete;
+    this.folder = folder;
+    this.id = Math.floor(Math.random() * 1000);
   }
 
   todoMethod() {
@@ -45,6 +47,22 @@ class Todo {
   set isComplete(bool) {
     this._isComplete = bool;
   }
+
+  get folder() {
+    return this._folder;
+  }
+  set folder(val) {
+    this._folder = val;
+  }
+  // Once I figure out how to implement folders arr, this will be put into play
+  // set folder(val) {
+  //   if (folders.indexOf(val) !== -1) {
+  //     this._folder = val;
+  //   } else {
+  //     alert('Not possible');
+  //     return;
+  //   }
+  // }
 }
 
 module.exports = Todo;
