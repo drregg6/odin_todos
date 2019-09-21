@@ -1,0 +1,17 @@
+{
+  "name": "odin_todos",
+  "version": "1.0.0",
+  "description": "A TODO App with guidance from The Odin Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "author": "Dave Regg <drregg6@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
