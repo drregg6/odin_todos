@@ -1,41 +1,42 @@
-$project
+Odin TODOs
 ========
 
-$project will solve your problem of where to start with documentation,
-by providing a basic explanation of how to do it easily.
+Create TODO lists which are organized into folders. Users can add, delete, and edit TODOs.
+Users can move TODOs into different folders. Users can add, delete, and edit folders.
 
 Look how easy it is to use:
 
-    import project
-    # Get your stuff done
-    project.do_stuff()
+    $git pull
+    $Todo.newTodo()
 
 Features
 --------
 
-- Be awesome
-- Make things faster
+- List TODOs
+- Organize through project folders
+- Add, delete, and edit TODOs
 
 Installation
 ------------
 
-Install $project by running:
+Install Odin TODOs by running:
 
-    install project
+    $git pull
+    $npm install
 
 Contribute
 ----------
 
-- Issue Tracker: github.com/$project/$project/issues
-- Source Code: github.com/$project/$project
+- Issue Tracker: github.com/drregg6/odin_todos/issues
+- Source Code: github.com/drregg6/odin_todos
 
 Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: project@google-groups.com
+We have a mailing list located at: drregg6@gmail.com
 
 License
 -------
 
-The project is licensed under the BSD license.
+The project is licensed under the MIT license.
