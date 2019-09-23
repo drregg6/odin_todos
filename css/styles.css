@@ -62,16 +62,19 @@ nav {
 
 .todos li {
   padding: .5rem;
-}
-.todos li:nth-child(even) {
-  background: yellow;
+  border-bottom: 1px solid black;
+
+  cursor: pointer;
 }
 .todos li:hover {
   background: skyblue;
 }
 .todos li:first-child {
   background: #c3c3c3;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
+}
+.todos li:last-child {
+  border-bottom: none;
 }
 
 .task, .due-date {
@@ -81,4 +84,14 @@ nav {
 .due-date {
   float: right;
   margin-right: 2rem;
+}
+
+.high {
+  background: lightcoral;
+}
+.medium {
+  background: lightgoldenrodyellow;
+}
+.low {
+  background: lightseagreen;
 }
