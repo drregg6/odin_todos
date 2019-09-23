@@ -51,18 +51,14 @@ class Todo {
   get folder() {
     return this._folder;
   }
-  set folder(val) {
-    this._folder = val;
+  set folder(folders, val) {
+    if (folders.indexOf(val) !== -1) {
+      this._folder = val;
+    } else {
+      alert('Not possible');
+      return;
+    }
   }
-  // Once I figure out how to implement folders arr, this will be put into play
-  // set folder(val) {
-  //   if (folders.indexOf(val) !== -1) {
-  //     this._folder = val;
-  //   } else {
-  //     alert('Not possible');
-  //     return;
-  //   }
-  // }
 }
 
 module.exports = Todo;
