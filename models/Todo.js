@@ -51,13 +51,13 @@ class Todo {
   get folder() {
     return this._folder;
   }
-  set folder(folders, val) {
-    if (folders.indexOf(val) !== -1) {
-      this._folder = val;
-    } else {
-      alert('Not possible');
-      return;
-    }
+  set folder(val) {
+    // if (folders.indexOf(val) !== -1) { this logic will have to go in a function
+    this._folder = val;
+    // } else {
+      // alert('Not possible');
+      // return;
+    // }
   }
 }
 
