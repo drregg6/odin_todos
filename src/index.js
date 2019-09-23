@@ -1,5 +1,7 @@
 const Todo = require('../models/Todo');
 const Folder = require('../models/Folder');
+const addFolder = require('../utils/folderModule').addFolder;
+const removeFolder = require('../utils/folderModule').removeFolder;
 let folders = [];
 
 let newTodo = new Todo('title', 'desc', 'dueDate', 'priority');
@@ -9,6 +11,8 @@ console.log(newTodo.isComplete);
 folder.addTodo(newTodo);
 console.log(folder.id);
 console.log(folder.getTodos());
+addFolder();
+removeFolder();
 
 
 
@@ -18,3 +22,13 @@ TODOS.forEach(TODO => {
     console.log('I feel you');
   });
 });
+
+/*
+
+Adjust the input listener when user
+- Adds a new folder
+- Removes a folder
+- IF (folders.length === 5)
+    then input = disabled
+
+*/

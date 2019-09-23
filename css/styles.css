@@ -5,6 +5,8 @@
   /* border: 1px dotted red; */
 }
 
+/* Reset */
+
 body {
   font-family: Verdana, sans-serif;
   text-align: center;
@@ -26,14 +28,16 @@ li {
   list-style-type: none;
 }
 
-header {
-  background: #c3c3c3;
+a {
+  text-decoration: none;
+  color: navy;
+}
+a:hover {
+  color: royalblue;
 }
 
-h1 {
-  font-size: 1.25rem;
-  letter-spacing: .3rem;
-}
+
+/* Navigation */
 
 nav {
   background: plum;
@@ -46,20 +50,57 @@ nav {
   width: 100%;
 }
 
+h1 {
+  font-size: 1.25rem;
+  letter-spacing: .3rem;
+}
+
 .nav {
   display: flex;
   justify-content: flex-end;
 }
+
+
+
+/* Form */
+
+.new-folder {
+  margin: 2rem auto;
+  width: 40%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-folder input[type="text"],
+.new-folder button {
+  border: 1px solid black;
+  border-radius: 2px;
+  outline: none;
+  padding: .25rem .75rem;
+  font-size: 1rem;
+}
+
+.new-folder input[type="text"] {
+  width: 72%;
+}
+.new-folder button {
+  width: 23%;
+  background: white;
+}
+.new-folder button:hover {
+  background: silver;
+}
+
+
+
+/* Content */
 
 .folder {
   margin-right: 10px;
 }
 .folder:last-child {
   margin-right: 0;
-}
-
-.content {
-  margin-top: 3rem;
 }
 
 .todos {
