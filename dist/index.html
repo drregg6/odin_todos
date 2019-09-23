@@ -8,7 +8,53 @@
     <link rel="stylesheet" href="../css/styles.css">
   </head>
   <body>
-    <h1>Hello world!</h1>
+    <div class="container">
+      <header>
+        <h1>Odin TODOs</h1>
+      </header>
+      <nav class="navigation folders">
+        <ul class="nav">
+          <li id="default" class="folder"><a href="#">All Projects</a></li>
+          <li id="default" class="folder"><a href="#">JavaScript</a></li>
+          <li id="default" class="folder"><a href="#">Ruby</a></li>
+        </ul>
+      </nav>
+      <div class="content">
+        <ul class="todos">
+          <li class="project-title">
+            <h1>JavaScript</h1>
+          </li>
+          <li class="todo"> <!-- instead of a link, use an eventListener -->
+            <div class="task">Take out the trash</div>
+            <div class="due-date">9/24</div>
+          </li>
+          <li class="todo">
+            <div class="task">Write a journal entry</div>
+            <div class="due-date">9/24</div>
+          </li>
+          <li class="todo">
+            <div class="task">Walk the dog</div>
+            <div class="due-date">9/24</div>
+          </li>
+          <li class="todo">
+            <div class="task">Do some laundry</div>
+            <div class="due-date">9/24</div>
+          </li>
+          <li class="todo">
+            <div class="task">Call mother</div>
+            <div class="due-date">9/24</div>
+          </li>
+          <li class="todo">
+            <div class="task">Clean the bathtub</div>
+            <div class="due-date">9/24</div>
+          </li>
+          <li class="todo">
+            <div class="task">Watch The Boys</div>
+            <div class="due-date">9/24</div>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <script src="main.js" async defer></script>
   </body>
 </html>
