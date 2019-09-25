@@ -1,8 +1,10 @@
+const uuidv4 = require('uuid/v4');
+
 class Folder {
   constructor(name) {
     this.name = name;
     this.todos = [];
-    this.id = Math.floor(Math.random() * 100); // replace with uuid
+    this.id = uuidv4();
   }
 
   getTodos() {
