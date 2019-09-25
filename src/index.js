@@ -1,9 +1,9 @@
 const Todo = require('../models/Todo');
 const Folder = require('../models/Folder');
 const myFolders = require('../utils/universalVar').folders;
+const getFolder = require('../utils/folderModule').getFolder;
 const addFolder = require('../utils/folderModule').addFolder;
 const removeFolder = require('../utils/folderModule').removeFolder;
-let folders = [];
 
 let newTodo = new Todo('title', 'desc', 'dueDate', 'priority');
 let folder = new Folder('Default');
@@ -18,6 +18,8 @@ addFolder(myFolders, 'Ruby');
 addFolder(myFolders, 'Life');
 console.log(myFolders);
 console.log(myFolders[1].id);
+console.log(getFolder(myFolders, 'myFolders[4].id'));
+console.log(getFolder(myFolders, myFolders[2].id));
 
 
 
