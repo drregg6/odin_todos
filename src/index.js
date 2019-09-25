@@ -22,7 +22,7 @@ console.log(myFolders[1].id);
 console.log(getFolder(myFolders, 'myFolders[4].id'));
 console.log(getFolder(myFolders, myFolders[2].id));
 console.log(addTodo('name', 'desc', 'duedate', 'priority'));
-console.log(addTodo('Take out trash', 'Collect all trash from bathrooms, kitchen, and bedroom and bring them outside', '9/25/2018', 'high', 'Javascript'));
+// console.log(addTodo('Take out trash', 'Collect all trash from bathrooms, kitchen, and bedroom and bring them outside', '9/25/2018', 'high', 'Javascript'));
 
 
 const TODOS = document.querySelectorAll('.todo');

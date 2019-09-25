@@ -9,13 +9,15 @@ module.exports = {
     console.log('getTodo');
   },
   addTodo: function(title, desc, dueDate, priority, folder='default') {
-    console.log(folder)
     let newTodo = new Todo(title, desc, dueDate, priority, folder);
-    let folder = myFolders.filter(folder => {
-      return folder.name === folder;
-    });
-    folder.todos.push(newTodo);
+    let myFolder;
+    for (let i = 0; i < myFolders.length; i++) {
+      if (myFolders[i].name === folder) {
+        myFolder = myFolders[i];
+      }
+    }
+    myFolder.todos.push(newTodo);
 
-    return folder;
+    return myFolder;
   }
 }
