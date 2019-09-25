@@ -1,12 +1,14 @@
+const uuidv4 = require('uuid/v4');
+
 class Todo {
-  constructor (title, desc, dueDate, priority, isComplete=false, folder='default') {
+  constructor (title, desc, dueDate, priority, folder='default', isComplete=false) {
     this.title = title;
     this.desc = desc;
     this.dueDate = dueDate;
     this.priority = priority;
     this.isComplete = isComplete;
     this.folder = folder;
-    this.id = Math.floor(Math.random() * 1000);
+    this.id = uuidv4();
   }
 
   todoMethod() {
