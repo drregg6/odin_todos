@@ -27,14 +27,8 @@ const getTodos = require('../utils/todoActions').getTodos;
 const getTodo = require('../utils/todoActions').getTodo;
 const deleteTodo = require('../utils/todoActions').deleteTodo;
 
-folder = getFolder(myFolders[1].id);
-
-console.log(folder);
-console.log(require('../utils/universalVar').folder);
-console.log(getTodos(folder));
-console.log(getTodo(folder, 'hello-world'));
-console.log(getTodo(folder, folder.todos[0].id));
-console.log(deleteTodo(folder, folder.todos[2].id));
+// Controllers
+const displayFolders = require('../views/folders').displayFolders;
 
 
 
@@ -48,6 +42,11 @@ TODOS.forEach(TODO => {
 const SUBMIT = document.querySelector('button');
 SUBMIT.addEventListener('click', function() {
   console.log(removeFolder(myFolders, myFolders[1].id));
+});
+
+const TEST = document.querySelector('#test');
+TEST.addEventListener('click', function() {
+  displayFolders();
 });
 
 
@@ -75,3 +74,12 @@ SUBMIT.addEventListener('click', function() {
 // console.log(getFolder(myFolders, myFolders[2].id));
 // console.log(addTodo('name', 'desc', 'duedate', 'priority'));
 // console.log(addTodo('Take out trash', 'Collect all trash from bathrooms, kitchen, and bedroom and bring them outside', '9/25/2018', 'high', 'Javascript'));
+
+// folder = getFolder(myFolders[1].id);
+
+// console.log(folder);
+// console.log(require('../utils/universalVar').folder);
+// console.log(getTodos(folder));
+// console.log(getTodo(folder, 'hello-world'));
+// console.log(getTodo(folder, folder.todos[0].id));
+// console.log(deleteTodo(folder, folder.todos[2].id));
