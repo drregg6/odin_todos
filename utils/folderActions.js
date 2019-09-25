@@ -1,10 +1,11 @@
 const Folder = require('../models/Folder');
+const myFolders = require('../utils/universalVar').folders;
 
 module.exports = {
-  getFolder: function(arr, id) {
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i].id === id) {
-        return arr[i];
+  getFolder: function(id) {
+    for (let i = 0; i < myFolders.length; i++) {
+      if (myFolders[i].id === id) {
+        return myFolders[i];
       }
     }
     return 'No folder found';
