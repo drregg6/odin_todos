@@ -29,6 +29,7 @@ const deleteTodo = require('../utils/todoActions').deleteTodo;
 
 // Controllers
 const displayFolders = require('../views/folders').displayFolders;
+const displayFolder = require('../views/folders').displayFolder;
 
 
 
@@ -45,9 +46,20 @@ SUBMIT.addEventListener('click', function() {
 });
 
 const TEST = document.querySelector('#test');
-TEST.addEventListener('click', function() {
+TEST.addEventListener('click', function(ev) {
+  console.log(ev);
   displayFolders();
 });
+
+const FOLDERS = document.querySelectorAll('.folder');
+FOLDERS.forEach(folder => {
+  folder.addEventListener('click', function(ev) {
+    let el = ev.target;
+    let name = el.innerText.toLowerCase();
+
+    displayFolder(name);
+  });
+})
 
 
 
