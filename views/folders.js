@@ -4,13 +4,6 @@ const createFolderList = require('../utils/createFolderList');
 const removeAllNodes = require('../utils/removeAllNodes');
 
 module.exports = {
-  // displayFolders: function() {
-  //   removeAllNodes(CONTENT);
-  //   myFolders.map(folder => {
-  //     CONTENT.appendChild(createFolderList(folder));
-  //   })
-  // },
-
   displayFolder: function(folder) {
     removeAllNodes(CONTENT);
     myFolders.map(folder => {

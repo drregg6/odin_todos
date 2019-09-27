@@ -28,7 +28,7 @@ const getTodo = require('../utils/todoActions').getTodo;
 const deleteTodo = require('../utils/todoActions').deleteTodo;
 
 // Controllers
-const displayFolders = require('../views/folders').displayFolders;
+const displayNav = require('../views/nav').displayNav;
 const displayFolder = require('../views/folders').displayFolder;
 
 
@@ -43,20 +43,21 @@ TODOS.forEach(TODO => {
 const INPUT = document.querySelector('#new-folder-input');
 const SUBMIT = document.querySelector('#new-folder-submit');
 SUBMIT.addEventListener('click', function() {
-  console.log(myFolders.length);
   if (myFolders.length < 5) {
     addFolder(INPUT.value);
   } else {
     alert('Too many folders, please delete one');
   }
   // Re-render nav
+  displayNav();
   // Re-render Folders
+  displayFolder();
   INPUT.value = '';
 });
 
 const TEST = document.querySelector('#test');
 TEST.addEventListener('click', function(ev) {
-  displayFolder();
+  
 });
 
 const FOLDERS = document.querySelectorAll('.folder');
@@ -70,5 +71,6 @@ FOLDERS.forEach(folder => {
 });
 
 window.onload = function() {
+  displayNav();
   displayFolder();
 }
