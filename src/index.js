@@ -40,15 +40,23 @@ TODOS.forEach(TODO => {
   });
 });
 
-const SUBMIT = document.querySelector('button');
+const INPUT = document.querySelector('#new-folder-input');
+const SUBMIT = document.querySelector('#new-folder-submit');
 SUBMIT.addEventListener('click', function() {
-  console.log(removeFolder(myFolders, myFolders[1].id));
+  console.log(myFolders.length);
+  if (myFolders.length < 5) {
+    addFolder(INPUT.value);
+  } else {
+    alert('Too many folders, please delete one');
+  }
+  // Re-render nav
+  // Re-render Folders
+  INPUT.value = '';
 });
 
 const TEST = document.querySelector('#test');
 TEST.addEventListener('click', function(ev) {
-  console.log(ev);
-  displayFolders();
+  displayFolder();
 });
 
 const FOLDERS = document.querySelectorAll('.folder');
@@ -59,39 +67,8 @@ FOLDERS.forEach(folder => {
 
     displayFolder(name);
   });
-})
+});
 
-
-
-
-
-
-
-
-
-// let newTodo = new Todo('title', 'desc', 'dueDate', 'priority');
-// let folder = new Folder('Default');
-// newTodo.isComplete = true;
-// console.log(newTodo.isComplete);
-// folder.addTodo(newTodo);
-// console.log(folder.id);
-// console.log(folder.getTodos());
-// console.log(myFolders);
-// addFolder(myFolders, 'Javascript');
-// addFolder(myFolders, 'Ruby');
-// addFolder(myFolders, 'Life');
-// console.log(myFolders);
-// console.log(myFolders[1].id);
-// console.log(getFolder(myFolders, 'myFolders[4].id'));
-// console.log(getFolder(myFolders, myFolders[2].id));
-// console.log(addTodo('name', 'desc', 'duedate', 'priority'));
-// console.log(addTodo('Take out trash', 'Collect all trash from bathrooms, kitchen, and bedroom and bring them outside', '9/25/2018', 'high', 'Javascript'));
-
-// folder = getFolder(myFolders[1].id);
-
-// console.log(folder);
-// console.log(require('../utils/universalVar').folder);
-// console.log(getTodos(folder));
-// console.log(getTodo(folder, 'hello-world'));
-// console.log(getTodo(folder, folder.todos[0].id));
-// console.log(deleteTodo(folder, folder.todos[2].id));
+window.onload = function() {
+  displayFolder();
+}

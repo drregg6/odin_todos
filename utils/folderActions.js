@@ -11,11 +11,11 @@ module.exports = {
     return 'No folder found';
   },
 
-  addFolder: function(arr, name) {
+  addFolder: function(name) {
     const newFolder = new Folder(name);
-    arr.push(newFolder);
+    myFolders.push(newFolder);
 
-    return arr;
+    return myFolders;
   },
 
   removeFolder: function(arr, id) {
