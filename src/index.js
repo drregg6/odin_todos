@@ -1,10 +1,7 @@
 /*
 
 Adjust the input listener when user
-- Adds a new folder
 - Removes a folder
-- IF (folders.length === 5)
-    then input = disabled
 
 */
 
@@ -57,20 +54,33 @@ SUBMIT.addEventListener('click', function() {
 
 const TEST = document.querySelector('#test');
 TEST.addEventListener('click', function(ev) {
-  
+  console.log('test');
+  console.log(document.querySelectorAll('.folder'));
 });
 
-const FOLDERS = document.querySelectorAll('.folder');
-FOLDERS.forEach(folder => {
-  folder.addEventListener('click', function(ev) {
-    let el = ev.target;
-    let name = el.innerText.toLowerCase();
-
-    displayFolder(name);
-  });
-});
+// const FOLDERS = document.querySelectorAll('.folder');
+// FOLDERS.forEach(folder => {
+//   folder.addEventListener('click', function(ev) {
+    
+//   });
+// });
 
 window.onload = function() {
   displayNav();
   displayFolder();
 }
+
+
+
+
+
+
+
+
+
+// const NEW_TODO_H2 = document.querySelector('.new-todo-li h2');
+// const NEW_TODO = document.querySelector('.new-todo');
+// NEW_TODO_H2.addEventListener('click', function(ev) {
+//   NEW_TODO.classList.toggle('hidden');
+//   NEW_TODO.classList.toggle('show');
+// });

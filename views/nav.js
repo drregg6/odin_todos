@@ -1,15 +1,11 @@
 const NAV = document.querySelector('.nav');
 const myFolders = require('../utils/universalVar').folders;
 const removeAllNodes = require('../utils/removeAllNodes');
+const navEventListeners = require('../utils/eventListeners').navEventListeners;
 
 module.exports = {
   displayNav: function() {
-    removeAllNodes(NAV);
-    const firstLi = document.createElement('li');
-    firstLi.setAttribute('id', 'all');
-    firstLi.classList.add('folder');
-    firstLi.innerText = 'show all folders';
-    NAV.appendChild(firstLi);
+    navSetup();
 
     for (let i = 0; i < myFolders.length; i++) {
       let name = myFolders[i].name;
@@ -20,5 +16,17 @@ module.exports = {
 
       NAV.appendChild(li);
     }
+
+    navEventListeners();
   }
+}
+
+const navSetup = () => {
+  removeAllNodes(NAV);
+  
+  const li = document.createElement('li');
+  li.setAttribute('id', 'all');
+  li.classList.add('folder');
+  li.innerText = 'show all folders';
+  NAV.appendChild(li);
 }

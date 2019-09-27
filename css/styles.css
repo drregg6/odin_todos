@@ -28,11 +28,13 @@ li {
   list-style-type: none;
 }
 
-a {
+a,
+.folder {
   text-decoration: none;
   color: navy;
 }
-a:hover {
+a:hover,
+.folder:hover {
   color: royalblue;
 }
 
@@ -97,10 +99,13 @@ h1 {
 /* Content */
 
 .folder {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 .folder:last-child {
   margin-right: 0;
+}
+.folder:hover {
+  text-decoration: underline;
 }
 
 .todos {
@@ -119,10 +124,13 @@ h1 {
 .todos li {
   padding: .5rem;
   border-bottom: 1px solid black;
-
+}
+.todo,
+.folder,
+.new-todo-li {
   cursor: pointer;
 }
-.todos li:hover {
+.todos .todo:hover {
   background: skyblue;
 }
 .todos li:first-child {
@@ -150,4 +158,41 @@ h1 {
 }
 .low {
   background: lightseagreen;
+}
+
+/* New todo */
+.new-todo {
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.new-todo-title,
+.new-todo-desc,
+.new-todo-duedate,
+.new-todo-priority,
+.new-todo input[type="submit"] {
+  padding: .5rem;
+  margin: .25rem 0;
+  font-size: 1rem;
+  font-family: Verdana;
+  border: 1px solid black;
+  outline: none;
+}
+
+.new-todo-desc {
+  resize: none;
+  height: 100px;
+}
+
+.new-todo label {
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+.show {
+  display: flex;
 }

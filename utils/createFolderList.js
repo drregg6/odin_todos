@@ -10,6 +10,7 @@ module.exports = function(obj) {
   obj.todos.forEach(todo => {
     let li = document.createElement('li');
     li.classList.add(`${todo.priority}`);
+    li.classList.add('todo');
     let firstDiv = document.createElement('div');
     let secondDiv = document.createElement('div');
     firstDiv.classList.add('task');
