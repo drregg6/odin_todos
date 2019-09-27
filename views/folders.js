@@ -2,6 +2,7 @@ const CONTENT = document.querySelector('.content');
 const myFolders = require('../utils/universalVar').folders;
 const createFolderList = require('../utils/createFolderList');
 const removeAllNodes = require('../utils/removeAllNodes');
+const todosEventListeners = require('../utils/eventListeners').todosEventListeners;
 
 module.exports = {
   displayFolder: function(folder) {
@@ -15,5 +16,12 @@ module.exports = {
         CONTENT.appendChild(createFolderList(myFolders[i]));
       }
     }
+
+    const TODOS = document.querySelectorAll('.todo');
+    TODOS.forEach(todo => {
+      todo.addEventListener('click', function(ev) {
+        console.log(ev);
+      });
+    });
   }
 }

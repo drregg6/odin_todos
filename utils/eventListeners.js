@@ -10,6 +10,17 @@ module.exports = {
 
         displayFolder(name);
       });
-    })
+    });
   }
+
+  // Not fucking working
+  // displayFolder() is not a function
+  // todosEventListeners: function() {
+  //   const TODOS = document.querySelectorAll('.todo');
+  //   TODOS.forEach(todo => {
+  //     todo.addEventListener('click', function(ev) {
+  //       console.log('fuck off');
+  //     });
+  //   });
+  // }
 }

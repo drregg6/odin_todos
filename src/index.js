@@ -2,6 +2,15 @@
 
 Adjust the input listener when user
 - Removes a folder
+- Render addTodo li
+- Add Todo
+
+
+=== Note on eventListeners ===
+eventListeners need to be dynamically rendered
+with the HTML that is being created
+or else document.querySelector
+will not be able to find any of the elements that are being targeted
 
 */
 
@@ -30,12 +39,6 @@ const displayFolder = require('../views/folders').displayFolder;
 
 
 
-const TODOS = document.querySelectorAll('.todo');
-TODOS.forEach(TODO => {
-  TODO.addEventListener('click', function() {
-    console.log('I feel you');
-  });
-});
 
 const INPUT = document.querySelector('#new-folder-input');
 const SUBMIT = document.querySelector('#new-folder-submit');
@@ -57,13 +60,6 @@ TEST.addEventListener('click', function(ev) {
   console.log('test');
   console.log(document.querySelectorAll('.folder'));
 });
-
-// const FOLDERS = document.querySelectorAll('.folder');
-// FOLDERS.forEach(folder => {
-//   folder.addEventListener('click', function(ev) {
-    
-//   });
-// });
 
 window.onload = function() {
   displayNav();
