@@ -23,15 +23,15 @@ const Todo = require('../models/Todo');
 const Folder = require('../models/Folder');
 
 // Folder Actions
-const getFolder = require('../utils/folderActions').getFolder;
-const addFolder = require('../utils/folderActions').addFolder;
-const removeFolder = require('../utils/folderActions').removeFolder;
+const getFolder = require('../actions/folderActions').getFolder;
+const addFolder = require('../actions/folderActions').addFolder;
+const removeFolder = require('../actions/folderActions').removeFolder;
 
 // Todo Actions
-const addTodo = require('../utils/todoActions').addTodo;
-const getTodos = require('../utils/todoActions').getTodos;
-const getTodo = require('../utils/todoActions').getTodo;
-const deleteTodo = require('../utils/todoActions').deleteTodo;
+const addTodo = require('../actions/todoActions').addTodo;
+const getTodos = require('../actions/todoActions').getTodos;
+const getTodo = require('../actions/todoActions').getTodo;
+const deleteTodo = require('../actions/todoActions').deleteTodo;
 
 // Controllers
 const displayNav = require('../views/nav').displayNav;
@@ -60,6 +60,32 @@ TEST.addEventListener('click', function(ev) {
   console.log('test');
   console.log(document.querySelectorAll('.folder'));
 });
+
+
+// Event Delegation
+// EventListeners for dynamically rendered HTML
+document.addEventListener('click', function(event) {
+  // TODO eventListener
+  if (event.target && event.target.classList.contains('todo')) {
+    console.log('HELLO FROM SCRIPTS')
+  };
+  
+  // DELETE eventListener
+  if (event.target && event.target.classList.contains('delete-button')) {
+      let parent = event.target.parentNode.parentNode;
+      let id = parent.dataset.id;
+      console.log(removeFolder(id));
+      displayFolder();
+      displayNav();
+  };
+
+  if (event.target && event.target.classList.contains('folder')) {
+    let el = event.target;
+    let name = el.innerText.toLowerCase();
+
+    displayFolder(name);
+  }
+})
 
 window.onload = function() {
   displayNav();

@@ -16,18 +16,8 @@ module.exports = {
       }
     }
     todoEventListener();
-    deleteEventListener();
   }
 }
-
-const deleteEventListener = () => {
-  const DELETES = document.querySelectorAll('.delete-button');
-  DELETES.forEach(button => {
-    button.addEventListener('click', function(ev) {
-      console.log(`I'm here to delete you!`);
-    });
-  });
-};
 
 const todoEventListener = () => {
   const TODOS = document.querySelectorAll('.todo');

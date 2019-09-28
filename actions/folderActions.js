@@ -18,16 +18,16 @@ module.exports = {
     return myFolders;
   },
 
-  removeFolder: function(arr, id) {
+  removeFolder: function(id) {
     let index;
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i].id === id) {
-        index = arr.indexOf(arr[i]);
+    for (let i = 0; i < myFolders.length; i++) {
+      if (myFolders[i].id === id) {
+        index = myFolders.indexOf(myFolders[i]);
       }
     }
-    if (index !== undefined) {
-      arr.splice(index, 1);
+    if (index !== undefined && index !== 0) {
+      myFolders.splice(index, 1);
     }
-    return arr;
+    return myFolders;
   }
 }

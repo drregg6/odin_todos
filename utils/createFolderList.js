@@ -1,6 +1,7 @@
 module.exports = function(obj) {
   let ul = document.createElement('ul');
   ul.classList.add('todos');
+  ul.setAttribute('data-id', obj.id);
   let deleteButton = document.createElement('button');
   deleteButton.classList.add('delete-button')
   deleteButton.innerText = 'X';
