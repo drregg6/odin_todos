@@ -1,7 +1,7 @@
 const NAV = document.querySelector('.nav');
 const myFolders = require('../utils/universalVar').folders;
 const removeAllNodes = require('../utils/removeAllNodes');
-const navEventListeners = require('../utils/eventListeners').navEventListeners;
+const navEventListener = require('../utils/eventListeners').navEventListener;
 
 module.exports = {
   displayNav: function() {
@@ -17,7 +17,7 @@ module.exports = {
       NAV.appendChild(li);
     }
 
-    navEventListeners();
+    navEventListener();
   }
 }
 

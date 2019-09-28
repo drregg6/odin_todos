@@ -1,7 +1,7 @@
 const displayFolder = require('../views/folders').displayFolder;
 
 module.exports = {
-  navEventListeners: function() {
+  navEventListener: function() {
     const FOLDERS = document.querySelectorAll('.folder');
     FOLDERS.forEach(folder => {
       folder.addEventListener('click', function(ev) {
@@ -12,15 +12,4 @@ module.exports = {
       });
     });
   }
-
-  // Not fucking working
-  // displayFolder() is not a function
-  // todosEventListeners: function() {
-  //   const TODOS = document.querySelectorAll('.todo');
-  //   TODOS.forEach(todo => {
-  //     todo.addEventListener('click', function(ev) {
-  //       console.log('fuck off');
-  //     });
-  //   });
-  // }
 }
