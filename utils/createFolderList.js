@@ -1,10 +1,14 @@
 module.exports = function(obj) {
   let ul = document.createElement('ul');
   ul.classList.add('todos');
+  let deleteButton = document.createElement('button');
+  deleteButton.classList.add('delete-button')
+  deleteButton.innerText = 'X';
   let titleLi = document.createElement('li');
   titleLi.classList.add('project-title');
   titleLi.innerHTML = `<h1>${obj.name}</h1>`;
 
+  titleLi.prepend(deleteButton);
   ul.appendChild(titleLi);
 
   obj.todos.forEach(todo => {

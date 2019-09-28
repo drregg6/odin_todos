@@ -15,12 +15,25 @@ module.exports = {
         CONTENT.appendChild(createFolderList(myFolders[i]));
       }
     }
-
-    const TODOS = document.querySelectorAll('.todo');
-    TODOS.forEach(todo => {
-      todo.addEventListener('click', function(ev) {
-        console.log('Hello world! :)');
-      });
-    });
+    todoEventListener();
+    deleteEventListener();
   }
+}
+
+const deleteEventListener = () => {
+  const DELETES = document.querySelectorAll('.delete-button');
+  DELETES.forEach(button => {
+    button.addEventListener('click', function(ev) {
+      console.log(`I'm here to delete you!`);
+    });
+  });
+};
+
+const todoEventListener = () => {
+  const TODOS = document.querySelectorAll('.todo');
+  TODOS.forEach(todo => {
+    todo.addEventListener('click', function(ev) {
+      console.log('Hello world! :)');
+    });
+  });
 }
