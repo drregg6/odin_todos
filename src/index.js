@@ -85,6 +85,13 @@ document.addEventListener('click', function(event) {
 
     displayFolder(name);
   }
+
+  // NEW-TODO eventListener
+  if (event.target && event.target.classList.contains('new-todo-h2')) {
+    let div = event.target.nextSibling;
+    div.classList.toggle('hidden');
+    div.classList.toggle('show');
+  }
 })
 
 window.onload = function() {
