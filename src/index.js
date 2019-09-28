@@ -16,7 +16,6 @@ will not be able to find any of the elements that are being targeted
 
 // Universal Variables
 const myFolders = require('../utils/universalVar').folders;
-let folder = require('../utils/universalVar').folder; // This probably won't stay
 
 // Models
 const Todo = require('../models/Todo');
@@ -79,6 +78,7 @@ document.addEventListener('click', function(event) {
       displayNav();
   };
 
+  // NAV eventListener
   if (event.target && event.target.classList.contains('folder')) {
     let el = event.target;
     let name = el.innerText.toLowerCase();

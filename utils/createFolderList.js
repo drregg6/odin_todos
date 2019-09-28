@@ -1,3 +1,5 @@
+const newTodoLi = require('./newTodoLi');
+
 module.exports = function(obj) {
   let ul = document.createElement('ul');
   ul.classList.add('todos');
@@ -28,6 +30,7 @@ module.exports = function(obj) {
     li.appendChild(secondDiv);
     ul.appendChild(li);
   });
+  ul.appendChild(newTodoLi());
 
   return ul;
 }
