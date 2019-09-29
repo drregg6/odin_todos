@@ -185,10 +185,7 @@ h1 {
   padding: 1rem;
 }
 
-.new-todo-title,
-.new-todo-desc,
-.new-todo-duedate,
-.new-todo-priority,
+.new-todo-input,
 .new-todo input[type="submit"] {
   padding: .5rem;
   margin: .25rem 0;
@@ -196,6 +193,9 @@ h1 {
   font-family: Verdana;
   border: 1px solid black;
   outline: none;
+}
+.new-todo input[type="submit"]:hover {
+  cursor: pointer;
 }
 
 .new-todo-desc {
@@ -212,4 +212,9 @@ h1 {
 }
 .show {
   display: flex;
+}
+
+/* Footer */
+.footer {
+  padding: 2rem;
 }

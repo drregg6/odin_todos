@@ -21,6 +21,11 @@ with the HTML that is being created
 or else document.querySelector
 will not be able to find any of the elements that are being targeted
 
+=== Event delegation ===
+eventListeners are attached to document- the parent node-
+and looks for the element with the matching IF statement
+The eventListener then runs on that element
+
 */
 
 // Universal Variables
@@ -44,6 +49,7 @@ const deleteTodo = require('../actions/todoActions').deleteTodo;
 // Controllers
 const displayNav = require('../views/nav').displayNav;
 const displayFolder = require('../views/folders').displayFolder;
+const displayNewTodo = require('../views/todo').displayNewTodo;
 
 
 
@@ -100,6 +106,22 @@ document.addEventListener('click', function(event) {
     let div = event.target.nextSibling;
     div.classList.toggle('hidden');
     div.classList.toggle('show');
+  }
+
+  // ADD-TODO eventListener
+  if (event.target && event.target.classList.contains('add-new-todo')) {
+    let newTodo = {};
+    let children = [...event.target.parentNode.childNodes];
+    let inputs = document.querySelectorAll('.new-todo-input');
+    for (let i = 0; i < children.length; i++) {
+      if (children[i].className && children[i].className === 'new-todo-input') {
+        let key = children[i].id;
+        let val = children[i].value;
+        newTodo[key] = val;
+        displayNewTodo(children[i]);
+      }
+    }
+    displayNewTodo(newTodo)
   }
 })
 
