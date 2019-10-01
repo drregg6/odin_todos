@@ -30,7 +30,7 @@ class Todo {
   }
 
   get dueDate() {
-    return this.dueDate;
+    return this._dueDate;
   }
   set dueDate(val) {
     this._dueDate = val;

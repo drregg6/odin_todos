@@ -111,17 +111,23 @@ document.addEventListener('click', function(event) {
   // ADD-TODO eventListener
   if (event.target && event.target.classList.contains('add-new-todo')) {
     let newTodo = {};
+    let id = event.target.parentNode.parentNode.parentNode.dataset.id;
     let children = [...event.target.parentNode.childNodes];
-    let inputs = document.querySelectorAll('.new-todo-input');
+    let folderName;
     for (let i = 0; i < children.length; i++) {
       if (children[i].className && children[i].className === 'new-todo-input') {
         let key = children[i].id;
         let val = children[i].value;
         newTodo[key] = val;
-        displayNewTodo(children[i]);
       }
     }
-    displayNewTodo(newTodo)
+    for (let i = 0; i < myFolders.length; i++) {
+      if (myFolders[i].id === id) {
+       folderName = myFolders[i].name;
+      }
+    }
+    newTodo.folder = folderName;
+    displayNewTodo(newTodo);
   }
 })
 
@@ -129,18 +135,3 @@ window.onload = function() {
   displayNav();
   displayFolder();
 }
-
-
-
-
-
-
-
-
-
-// const NEW_TODO_H2 = document.querySelector('.new-todo-li h2');
-// const NEW_TODO = document.querySelector('.new-todo');
-// NEW_TODO_H2.addEventListener('click', function(ev) {
-//   NEW_TODO.classList.toggle('hidden');
-//   NEW_TODO.classList.toggle('show');
-// });
