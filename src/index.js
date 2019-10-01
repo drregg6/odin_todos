@@ -48,6 +48,7 @@ const deleteTodo = require('../actions/todoActions').deleteTodo;
 const displayNav = require('../views/nav').displayNav;
 const displayFolder = require('../views/folders').displayFolder;
 const displayNewTodo = require('../views/todo').displayNewTodo;
+const displayFullTodo = require('../views/todo').displayFullTodo;
 
 
 
@@ -79,7 +80,8 @@ TEST.addEventListener('click', function(ev) {
 document.addEventListener('click', function(event) {
   // TODO eventListener
   if (event.target && event.target.classList.contains('todo')) {
-    console.log('HELLO FROM SCRIPTS')
+    console.log([...event.target.children]);
+    displayFullTodo(event.target);
   };
   
   // DELETE eventListener

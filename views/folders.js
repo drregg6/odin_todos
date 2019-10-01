@@ -15,15 +15,5 @@ module.exports = {
         CONTENT.appendChild(createFolderList(myFolders[i]));
       }
     }
-    todoEventListener();
   }
-}
-
-const todoEventListener = () => {
-  const TODOS = document.querySelectorAll('.todo');
-  TODOS.forEach(todo => {
-    todo.addEventListener('click', function(ev) {
-      console.log('Hello world! :)');
-    });
-  });
 }
