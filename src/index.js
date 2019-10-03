@@ -1,10 +1,9 @@
 /*
 
 === TODO ===
-- implement TODO rendering
-    delete TODO
+- EDIT TODO should also be implemented
 - TODO should only take in dates that are MM/DD/YYYY format
-- when TODO is deleted, re-render entire page
+    formatDate can be added to utils
 - mobile css
 - separate eventListeners into a new file
 
