@@ -20,6 +20,7 @@ module.exports = function(obj) {
     let li = document.createElement('li');
     li.classList.add(`${todo.priority}`);
     li.classList.add('todo');
+    li.setAttribute('data-id', todo.id);
     let firstDiv = document.createElement('div');
     let secondDiv = document.createElement('div');
     let thirdDiv = expandTodoLi(todo);

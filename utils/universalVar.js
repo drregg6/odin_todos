@@ -17,7 +17,8 @@ module.exports = {
           dueDate: "09/14/2019",
           priority: "high",
           folder: "default",
-          isComplete: false
+          isComplete: false,
+          id: uuidv4()
         },
         {
           title: "Walk dog",
@@ -25,7 +26,8 @@ module.exports = {
           dueDate: "09/20/2019",
           priority: "high",
           folder: "default",
-          isComplete: false
+          isComplete: false,
+          id: uuidv4()
         },
         {
           title: "Meal prep",
@@ -33,7 +35,8 @@ module.exports = {
           dueDate: "09/10/2019",
           priority: "medium",
           folder: "default",
-          isComplete: false
+          isComplete: false,
+          id: uuidv4()
         }
       ],
       id: uuidv4()
@@ -47,7 +50,8 @@ module.exports = {
           dueDate: "10/01/2019",
           priority: "medium",
           folder: "javascript",
-          isComplete: false
+          isComplete: false,
+          id: uuidv4()
         },
         {
           title: "Work on Algorithms",
@@ -55,7 +59,8 @@ module.exports = {
           dueDate: "12/30/2019",
           priority: "low",
           folder: "javascript",
-          isComplete: false
+          isComplete: false,
+          id: uuidv4()
         },
         {
           title: "Weather App",
@@ -63,7 +68,8 @@ module.exports = {
           dueDate: "11/01/2019",
           priority: "low",
           folder: "javascript",
-          isComplete: false
+          isComplete: false,
+          id: uuidv4()
         }
       ],
       id: uuidv4()
@@ -77,7 +83,8 @@ module.exports = {
           dueDate: "10/31/2019",
           priority: "low",
           folder: "ruby",
-          isComplete: false
+          isComplete: false,
+          id: uuidv4()
         },
         {
           title: "Ruby on Rails",
@@ -85,7 +92,8 @@ module.exports = {
           dueDate: "11/01/2019",
           priority: "low",
           folder: "ruby",
-          isComplete: false
+          isComplete: false,
+          id: uuidv4()
         }
       ],
       id: uuidv4()

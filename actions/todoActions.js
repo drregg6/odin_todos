@@ -29,8 +29,8 @@ module.exports = {
     return myFolder;
   },
 
-  deleteTodo(folder, id) {
-    let todosArr = folder.todos;
+  deleteTodo(id) {
+    let todosArr = myFolders.todos;
     let index;
     for (let i = 0; i < todosArr.length; i++) {
       if (todosArr[i].id === id) {

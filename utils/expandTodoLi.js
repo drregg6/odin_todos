@@ -10,6 +10,7 @@ module.exports = function(obj) {
   let priorityP = document.createElement('p');
   let descP = document.createElement('desc');
   let button = document.createElement('button');
+  button.classList.add('complete-todo');
 
   priorityP.innerText = `Priority - ${priority}`;
   descP.innerText = `${desc}`;

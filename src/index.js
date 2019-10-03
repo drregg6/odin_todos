@@ -119,6 +119,15 @@ document.addEventListener('click', function(event) {
     newTodo.folder = folderName;
     displayNewTodo(newTodo);
   }
+
+  // COMPLETE-TODO eventListener
+  if (event.target && event.target.classList.contains('complete-todo')) {
+    let todoElement = event.target.parentNode.parentNode;
+    let id = todoElement.dataset.id;
+    deleteTodo(id);
+    displayFolder();
+    console.log(event.target.parentNode.parentNode);
+  }
 })
 
 window.onload = function() {
