@@ -17,17 +17,18 @@ module.exports = {
   },
 
   displayFullTodo: function(element) {
+    console.log(element);
     const EXPANDS = document.querySelectorAll('.expand');
-  
-    for (let i = 0; i < EXPANDS.length; i++) {
-      EXPANDS[i].classList.remove('show');
-      EXPANDS[i].classList.add('hidden');
-    }
 
     let children = [...element.children];
     children.forEach(child => {
       if (child.classList.contains('expand')) {
-        // doesn't work because I already have all of them closing above
+        if (child.classList.contains('hidden')) {
+          for (let i = 0; i < EXPANDS.length; i++) {
+            EXPANDS[i].classList.remove('show');
+            EXPANDS[i].classList.add('hidden');
+          }
+        }
         child.classList.toggle('show');
         child.classList.toggle('hidden');
       }

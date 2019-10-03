@@ -214,6 +214,19 @@ h1 {
   display: flex;
 }
 
+.expand {
+  margin: 1rem;
+  flex-direction: column;
+}
+.expand p {
+  margin: .5rem;
+  padding: 0;
+}
+.expand button {
+  width: 23%;
+  margin: .5rem auto;
+}
+
 /* Footer */
 .footer {
   padding: 2rem;

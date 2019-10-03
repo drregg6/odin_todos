@@ -1,4 +1,5 @@
 const newTodoLi = require('./newTodoLi');
+const expandTodoLi = require('./expandTodoLi');
 
 module.exports = function(obj) {
   let ul = document.createElement('ul');
@@ -20,6 +21,7 @@ module.exports = function(obj) {
     li.classList.add('todo');
     let firstDiv = document.createElement('div');
     let secondDiv = document.createElement('div');
+    let thirdDiv = expandTodoLi(todo);
     firstDiv.classList.add('task');
     secondDiv.classList.add('due-date');
 
@@ -28,6 +30,7 @@ module.exports = function(obj) {
 
     li.appendChild(firstDiv);
     li.appendChild(secondDiv);
+    li.appendChild(thirdDiv);
     ul.appendChild(li);
   });
   ul.appendChild(newTodoLi());
