@@ -1,11 +1,9 @@
 /*
 
 === TODO ===
-- EDIT TODO should also be implemented
-- TODO should only take in dates that are MM/DD/YYYY format
-    formatDate can be added to utils
+- EDIT TODO should also be implemented (?)
+- Add localStorage
 - mobile css
-- separate eventListeners into a new file
 
 
 === Note on eventListeners ===
@@ -26,19 +24,13 @@ const myFolders = require('../utils/universalVar').folders;
 
 // Folder Actions
 const addFolder = require('../actions/folderActions').addFolder;
-const removeFolder = require('../actions/folderActions').removeFolder;
-
-// Todo Actions
-const deleteTodo = require('../actions/todoActions').deleteTodo;
 
 // Controllers
 const displayNav = require('../views/nav').displayNav;
 const displayFolder = require('../views/folders').displayFolder;
-const displayNewTodo = require('../views/todo').displayNewTodo;
-const displayFullTodo = require('../views/todo').displayFullTodo;
 
 // Utils
-const checkDate = require('../utils/checkDate');
+const eventListeners = require('../utils/eventListeners');
 
 
 
@@ -66,75 +58,8 @@ SUBMIT.addEventListener('click', function() {
 // Event Delegation
 // EventListeners for dynamically rendered HTML
 document.addEventListener('click', function(event) {
-  // TODO eventListener
-  if (event.target && event.target.classList.contains('todo')) {
-    console.log([...event.target.children]);
-    displayFullTodo(event.target);
-  };
-  
-  // DELETE eventListener
-  if (event.target && event.target.classList.contains('delete-button')) {
-      let parent = event.target.parentNode.parentNode;
-      let id = parent.dataset.id;
-      console.log(removeFolder(id));
-      displayFolder();
-      displayNav();
-  };
-
-  // NAV eventListener
-  if (event.target && event.target.classList.contains('folder')) {
-    let el = event.target;
-    let name = el.innerText.toLowerCase();
-
-    displayFolder(name);
-  }
-
-  // NEW-TODO eventListener
-  if (event.target && event.target.classList.contains('new-todo-h2')) {
-    let div = event.target.nextSibling;
-    div.classList.toggle('hidden');
-    div.classList.toggle('show');
-  }
-
-  // ADD-TODO eventListener
-  if (event.target && event.target.classList.contains('add-new-todo')) {
-    let newTodo = {};
-    let id = event.target.parentNode.parentNode.parentNode.dataset.id;
-    let children = [...event.target.parentNode.childNodes];
-    let folderName;
-    for (let i = 0; i < children.length; i++) {
-      if (children[i].className && children[i].className === 'new-todo-input') {
-        let key = children[i].id;
-        let val = children[i].value;
-        if (key === 'duedate') {
-          if (!checkDate(val)) {
-            alert('Please enter a valid date');
-            return;
-          }
-        }
-        newTodo[key] = val;
-      }
-    }
-    for (let i = 0; i < myFolders.length; i++) {
-      if (myFolders[i].id === id) {
-       folderName = myFolders[i].name;
-      }
-    }
-    newTodo.folder = folderName;
-    displayNewTodo(newTodo);
-  }
-
-  // COMPLETE-TODO eventListener
-  if (event.target && event.target.classList.contains('complete-todo')) {
-    // need the folder id
-    let todoElement = event.target.parentNode.parentNode;
-    let folderElement = todoElement.parentNode;
-    let todoId = todoElement.dataset.id;
-    let folderId = folderElement.dataset.id;
-    deleteTodo(folderId, todoId);
-    displayFolder();
-  }
-})
+  eventListeners(event);
+});
 
 window.onload = function() {
   displayNav();
