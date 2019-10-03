@@ -24,19 +24,11 @@ The eventListener then runs on that element
 // Universal Variables
 const myFolders = require('../utils/universalVar').folders;
 
-// Models
-const Todo = require('../models/Todo');
-const Folder = require('../models/Folder');
-
 // Folder Actions
-const getFolder = require('../actions/folderActions').getFolder;
 const addFolder = require('../actions/folderActions').addFolder;
 const removeFolder = require('../actions/folderActions').removeFolder;
 
 // Todo Actions
-const addTodo = require('../actions/todoActions').addTodo;
-const getTodos = require('../actions/todoActions').getTodos;
-const getTodo = require('../actions/todoActions').getTodo;
 const deleteTodo = require('../actions/todoActions').deleteTodo;
 
 // Controllers
@@ -52,7 +44,11 @@ const INPUT = document.querySelector('#new-folder-input');
 const SUBMIT = document.querySelector('#new-folder-submit');
 SUBMIT.addEventListener('click', function() {
   if (myFolders.length < 5) {
-    addFolder(INPUT.value);
+    if (INPUT.value !== '') {
+      addFolder(INPUT.value);
+    } else {
+      alert('Input needs a value');
+    }
   } else {
     alert('Too many folders, please delete one');
   }
