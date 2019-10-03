@@ -37,6 +37,9 @@ const displayFolder = require('../views/folders').displayFolder;
 const displayNewTodo = require('../views/todo').displayNewTodo;
 const displayFullTodo = require('../views/todo').displayFullTodo;
 
+// Utils
+const checkDate = require('../utils/checkDate');
+
 
 
 
@@ -103,6 +106,12 @@ document.addEventListener('click', function(event) {
       if (children[i].className && children[i].className === 'new-todo-input') {
         let key = children[i].id;
         let val = children[i].value;
+        if (key === 'duedate') {
+          if (!checkDate(val)) {
+            alert('Please enter a valid date');
+            return;
+          }
+        }
         newTodo[key] = val;
       }
     }

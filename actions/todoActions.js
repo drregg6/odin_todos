@@ -1,5 +1,6 @@
 const Todo = require('../models/Todo');
 const myFolders = require('../utils/universalVar').folders;
+const checkDate = require('../utils/checkDate');
 
 module.exports = {
   getTodos: function(folder) {
@@ -17,6 +18,9 @@ module.exports = {
   },
 
   addTodo: function(title, desc, dueDate, priority, folder='default') {
+    if (!checkDate(dueDate)) {
+      return;
+    }
     let newTodo = new Todo(title, desc, dueDate, priority, folder);
     let myFolder;
     for (let i = 0; i < myFolders.length; i++) {
