@@ -98,6 +98,11 @@ h1 {
 
 /* Content */
 
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .folder {
   margin-right: 15px;
 }
@@ -109,8 +114,8 @@ h1 {
 }
 
 .todos {
-  width: 40%;
-  margin: 0 auto;
+  /* width: 40%; */
+  margin: 1rem 6rem;
   border: 2px solid black;
   border-radius: 5px;
 }

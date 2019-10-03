@@ -68,12 +68,6 @@ SUBMIT.addEventListener('click', function() {
   INPUT.value = '';
 });
 
-const TEST = document.querySelector('#test');
-TEST.addEventListener('click', function(ev) {
-  console.log('test');
-  console.log(document.querySelectorAll('.folder'));
-});
-
 
 // Event Delegation
 // EventListeners for dynamically rendered HTML

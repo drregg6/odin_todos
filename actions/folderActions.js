@@ -12,6 +12,7 @@ module.exports = {
   },
 
   addFolder: function(name) {
+    name = name.toLowerCase();
     const newFolder = new Folder(name);
     myFolders.push(newFolder);
 

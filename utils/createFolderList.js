@@ -1,5 +1,6 @@
 const newTodoLi = require('./newTodoLi');
 const expandTodoLi = require('./expandTodoLi');
+const capitalize = require('./capitalize');
 
 module.exports = function(obj) {
   let ul = document.createElement('ul');
@@ -10,7 +11,7 @@ module.exports = function(obj) {
   deleteButton.innerText = 'X';
   let titleLi = document.createElement('li');
   titleLi.classList.add('project-title');
-  titleLi.innerHTML = `<h1>${obj.name}</h1>`;
+  titleLi.innerHTML = `<h1>${capitalize(obj.name)}</h1>`;
 
   titleLi.prepend(deleteButton);
   ul.appendChild(titleLi);
