@@ -29,15 +29,21 @@ module.exports = {
     return myFolder;
   },
 
-  deleteTodo(id) {
-    let todosArr = myFolders.todos;
-    let index;
+  deleteTodo(folderId, todoId) {
+    let todosFolder;
+    for (let i = 0; i < myFolders.length; i++) {
+      if (folderId === myFolders[i].id) {
+        todosFolder = myFolders[i];
+      }
+    }
+    let todosArr = todosFolder.todos;
+    let index = -1;
     for (let i = 0; i < todosArr.length; i++) {
-      if (todosArr[i].id === id) {
+      if (todosArr[i].id === todoId) {
         index = todosArr.indexOf(todosArr[i]);
       }
     }
-    if (index) {
+    if (index !== -1) {
       todosArr.splice(index, 1);
     }
     return todosArr;

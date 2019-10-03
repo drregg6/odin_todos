@@ -122,11 +122,13 @@ document.addEventListener('click', function(event) {
 
   // COMPLETE-TODO eventListener
   if (event.target && event.target.classList.contains('complete-todo')) {
+    // need the folder id
     let todoElement = event.target.parentNode.parentNode;
-    let id = todoElement.dataset.id;
-    deleteTodo(id);
+    let folderElement = todoElement.parentNode;
+    let todoId = todoElement.dataset.id;
+    let folderId = folderElement.dataset.id;
+    deleteTodo(folderId, todoId);
     displayFolder();
-    console.log(event.target.parentNode.parentNode);
   }
 })
 
