@@ -99,8 +99,9 @@ h1 {
 /* Content */
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .folder {
@@ -114,8 +115,8 @@ h1 {
 }
 
 .todos {
-  /* width: 40%; */
-  margin: 1rem 6rem;
+  width: 35vw;
+  margin: 15px;
   border: 2px solid black;
   border-radius: 5px;
 }
@@ -147,7 +148,6 @@ h1 {
   padding: .5rem;
   border-bottom: 1px solid black;
 }
-.todo,
 .folder,
 .new-todo-li {
   cursor: pointer;
@@ -228,8 +228,13 @@ h1 {
   padding: 0;
 }
 .expand button {
-  width: 23%;
+  width: 100px;
+  padding: .5rem .75rem;
   margin: .5rem auto;
+  background: white;
+  border: 1px solid black;
+  outline: none;
+  cursor: pointer;
 }
 
 /* Footer */

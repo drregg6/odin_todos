@@ -3,12 +3,8 @@
 === TODO ===
 - implement TODO rendering
     delete TODO
-    display TODO
 - TODO should only take in dates that are MM/DD/YYYY format
-- each TODO li should have an extra DIV that will expand on click
-    shows description and deletion option
 - when TODO is deleted, re-render entire page
-- when TODO is displayed, show only that TODO
 - mobile css
 - separate eventListeners into a new file
 
