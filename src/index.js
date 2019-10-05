@@ -33,6 +33,32 @@ const displayFolder = require('../views/folders').displayFolder;
 const eventListeners = require('../utils/eventListeners');
 
 
+/*
+
+=== Note on localStorage ===
+In order to store Objects in localStorage
+They need to be JSON.stringify(obj)'d
+And then to use the data
+They need to be JSON.parse(obj)'d
+
+=== Example ===
+localStorage.setItem('default': JSON.stringify(defaultFolder));
+JSON.parse(localStorage.getItem('default'));
+
+=== To use localStorage ===
+Most of the functions will need to be re-written
+  - or set another parameter to 'localStorage'
+  - have it true / false
+  - let the function add accordingly
+
+*/
+if (typeof(Storage) !== undefined) {
+  localStorage.setItem('name', {});
+  localStorate.setItem()
+} else {
+  console.log('Universal vars!');
+}
+
 
 
 const INPUT = document.querySelector('#new-folder-input');
