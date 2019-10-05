@@ -41,7 +41,7 @@ module.exports = {
           id: 6
         }
       ],
-      id: 10
+      id: '10'
     }
   ]
 };

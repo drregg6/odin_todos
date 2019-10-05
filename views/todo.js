@@ -33,5 +33,9 @@ module.exports = {
         child.classList.toggle('hidden');
       }
     });
+  },
+
+  displayEditTodo: function(element) {
+    console.log(element);
   }
 }

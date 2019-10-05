@@ -1,5 +1,6 @@
 const newTodoLi = require('./newTodoLi');
 const expandTodoLi = require('./expandTodoLi');
+const todoEditForm = require('./todoEditForm');
 const capitalize = require('./capitalize');
 
 module.exports = function(obj) {
@@ -24,6 +25,7 @@ module.exports = function(obj) {
     let firstDiv = document.createElement('div');
     let secondDiv = document.createElement('div');
     let thirdDiv = expandTodoLi(todo);
+    let fourthDiv = todoEditForm(todo);
     firstDiv.classList.add('task');
     secondDiv.classList.add('due-date');
 
@@ -33,6 +35,7 @@ module.exports = function(obj) {
     li.appendChild(firstDiv);
     li.appendChild(secondDiv);
     li.appendChild(thirdDiv);
+    li.appendChild(fourthDiv);
     ul.appendChild(li);
   });
   ul.appendChild(newTodoLi());

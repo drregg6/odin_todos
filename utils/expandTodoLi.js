@@ -9,16 +9,20 @@ module.exports = function(obj) {
   div.classList.add('hidden');
   let priorityP = document.createElement('p');
   let descP = document.createElement('desc');
-  let button = document.createElement('button');
-  button.classList.add('complete-todo');
+  let firstButton = document.createElement('button');
+  let secondButton = document.createElement('button');
+  firstButton.classList.add('complete-todo');
+  secondButton.classList.add('edit-todo');
 
   priorityP.innerText = `Priority - ${priority}`;
   descP.innerText = `${desc}`;
-  button.innerText = `Complete?`;
+  firstButton.innerText = `Complete?`;
+  secondButton.innerText = `Edit?`;
 
   div.appendChild(priorityP);
   div.appendChild(descP);
-  div.appendChild(button);
+  div.appendChild(firstButton);
+  div.appendChild(secondButton);
 
   return div;
 }

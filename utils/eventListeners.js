@@ -8,6 +8,7 @@ This can probably be broken down even more
 const myFolders = require('./universalVar').folders;
 // Views
 const displayFullTodo = require('../views/todo').displayFullTodo;
+const displayEditTodo = require('../views/todo').displayEditTodo;
 const displayNewTodo = require('../views/todo').displayNewTodo;
 const displayFolder = require('../views/folders').displayFolder;
 const displayNav = require('../views/nav').displayNav;
@@ -53,6 +54,7 @@ module.exports = function(event) {
     let id = event.target.parentNode.parentNode.parentNode.dataset.id;
     let children = [...event.target.parentNode.childNodes];
     let folderName;
+    console.log(id)
     for (let i = 0; i < children.length; i++) {
       if (children[i].className && children[i].className === 'new-todo-input') {
         let key = children[i].id;
@@ -84,5 +86,21 @@ module.exports = function(event) {
     let folderId = folderElement.dataset.id;
     deleteTodo(folderId, todoId);
     displayFolder();
+  }
+
+  if (event.target && event.target.classList.contains('edit-todo')) {
+    let li = event.target.parentNode.parentNode.parentNode;
+    let id = li.dataset.id;
+    displayEditTodo(event.target.parentNode.parentNode.parentNode);
+
+    // Remove displayFullTodo
+    
+    // Toggle editTodoForm
+  }
+
+  if (event.target && event.target.classList.contains('edit-todo-submit')) {
+    // let ul = event.target.parentNode.parentNode.parentNode.parentNode;
+    // folderId = ul.dataset.id;
+    // editTodo();
   }
 }

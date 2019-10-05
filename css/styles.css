@@ -219,7 +219,8 @@ h1 {
   display: flex;
 }
 
-.expand {
+.expand,
+.edit-todo-form {
   margin: 1rem;
   flex-direction: column;
 }
@@ -227,7 +228,8 @@ h1 {
   margin: .5rem;
   padding: 0;
 }
-.expand button {
+.expand button,
+.edit-todo-form button {
   width: 100px;
   padding: .5rem .75rem;
   margin: .5rem auto;
