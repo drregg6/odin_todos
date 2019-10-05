@@ -89,13 +89,24 @@ module.exports = function(event) {
   }
 
   if (event.target && event.target.classList.contains('edit-todo')) {
-    let li = event.target.parentNode.parentNode.parentNode;
+    let li = event.target.parentNode.parentNode;
+    let editElement;
+    let ul = li.parentNode;
     let id = li.dataset.id;
-    displayEditTodo(event.target.parentNode.parentNode.parentNode);
 
-    // Remove displayFullTodo
-    
-    // Toggle editTodoForm
+    for (let i = 0; i < li.children.length; i++) {
+      if (li.children[i].classList.contains('edit-todo-form')) {
+        editElement = li.children[i];
+      }
+      if (li.children[i].classList.contains('expand')) {
+        li.children[i].classList.toggle('show');
+        li.children[i].classList.toggle('hidden');
+      }
+    }
+    editElement.classList.toggle('show');
+    editElement.classList.toggle('hidden');
+
+    displayEditTodo(ul);
   }
 
   if (event.target && event.target.classList.contains('edit-todo-submit')) {

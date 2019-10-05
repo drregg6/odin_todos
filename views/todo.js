@@ -19,6 +19,14 @@ module.exports = {
   displayFullTodo: function(element) {
     console.log(element);
     const EXPANDS = document.querySelectorAll('.expand');
+    const FORMS = document.querySelectorAll('.edit-todo-form');
+
+    FORMS.forEach(form => {
+      if (form.classList.contains('show')) {
+        form.classList.toggle('show');
+        form.classList.toggle('hidden');
+      }
+    })
 
     let children = [...element.children];
     children.forEach(child => {
