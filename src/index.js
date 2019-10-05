@@ -24,6 +24,7 @@ const myFolders = require('../utils/universalVar').folders;
 
 // Folder Actions
 const addFolder = require('../actions/folderActions').addFolder;
+const editTodo = require('../actions/todoActions').editTodo;
 
 // Controllers
 const displayNav = require('../views/nav').displayNav;
@@ -54,7 +55,6 @@ Most of the functions will need to be re-written
 */
 if (typeof(Storage) !== undefined) {
   localStorage.setItem('name', {});
-  localStorate.setItem()
 } else {
   console.log('Universal vars!');
 }
@@ -85,6 +85,19 @@ SUBMIT.addEventListener('click', function() {
 // EventListeners for dynamically rendered HTML
 document.addEventListener('click', function(event) {
   eventListeners(event);
+});
+
+const TEST = document.querySelector('.test');
+TEST.addEventListener('click', function() {
+  console.log(editTodo(10, {
+      title: 'Todo 2',
+      desc: 'My todo 2',
+      dueDate: '06/29/1989',
+      priority: 'high',
+      isComplete: false,
+      folder: 'default',
+      id: 2
+  }));
 });
 
 window.onload = function() {
