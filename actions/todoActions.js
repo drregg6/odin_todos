@@ -57,7 +57,6 @@ module.exports = {
     // todo should be an obj
     let id = todo.id;
     let folder;
-    let folderIndex;
     let todoIndex;
 
     // Get the folder

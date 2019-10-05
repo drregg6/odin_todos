@@ -1,8 +1,9 @@
 /*
 
 === TODO ===
-- EDIT TODO should also be implemented (?)
-- Add localStorage
+- EDIT TODO
+- Order list (?)
+- Add localStorage (?)
 - mobile css
 
 
@@ -89,7 +90,7 @@ document.addEventListener('click', function(event) {
 
 const TEST = document.querySelector('.test');
 TEST.addEventListener('click', function() {
-  console.log(editTodo(10, {
+  console.log(editTodo('10', {
       title: 'Todo 2',
       desc: 'My todo 2',
       dueDate: '06/29/1989',
