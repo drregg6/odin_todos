@@ -37,8 +37,6 @@ module.exports = function(obj) {
     li.appendChild(secondDiv);
     li.appendChild(thirdDiv);
     li.appendChild(fourthDiv);
-    console.log('li from todos')
-    console.log(li)
     ul.appendChild(li);
   }
   ul.appendChild(newTodoLi());

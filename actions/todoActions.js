@@ -68,8 +68,6 @@ module.exports = {
         folder = myFolders[i];
       }
     }
-    console.log('folder')
-    console.log(folder);
 
     // Find todo based on the id
     for (let i = 0; i < folder.todos.length; i++) {
@@ -101,8 +99,6 @@ module.exports = {
       }
     }
     editedTodo['_isComplete'] = false;
-    console.log('from todoActions')
-    console.log(editedTodo);
 
     // Remove todo from folder
     folder['todos'].splice(todoIndex, 1);

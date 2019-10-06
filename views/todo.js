@@ -1,6 +1,4 @@
-const CONTENT = document.querySelector('.content');
 const addTodo = require('../actions/todoActions').addTodo;
-const removeAllNodes = require('../utils/removeAllNodes');
 const displayFolder = require('./folders').displayFolder;
 
 module.exports = {

@@ -1,10 +1,12 @@
 /*
 
 === TODO ===
-- EDIT TODO
 - Order list (?)
 - Add localStorage (?)
 - mobile css
+- Code can still be refactored
+    - helpers
+    - cleaner code
 
 
 === Note on eventListeners ===
