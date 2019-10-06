@@ -11,6 +11,8 @@ module.exports = function(todo) {
   <input id="duedate" name="input" type="text" placeholder="MM/DD/YYYY" class="new-todo-input" value="${todo.dueDate}" />
   <label for="priority">Priority</label>
   <input id="priority" name="priority" type="text" placeholder="Low / Medium / High" class="new-todo-input" value="${todo.priority}" />
+  <label for="folder">Folder</label>
+  <input id="folder" name="folder" type="text" placeholder="Folder" class="new-todo-input" value="${todo.folder}" />
   <input class="edit-todo-submit" type="submit" value="Submit" />`;
 
   return div;

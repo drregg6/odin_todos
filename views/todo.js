@@ -26,7 +26,7 @@ module.exports = {
         form.classList.toggle('show');
         form.classList.toggle('hidden');
       }
-    })
+    });
 
     let children = [...element.children];
     children.forEach(child => {
@@ -44,6 +44,48 @@ module.exports = {
   },
 
   displayEditTodo: function(element) {
-    console.log(element);
+    let li = element.parentNode.parentNode;
+    let editElement;
+
+    for (let i = 0; i < li.children.length; i++) {
+      if (li.children[i].classList.contains('edit-todo-form')) {
+        editElement = li.children[i];
+      }
+      if (li.children[i].classList.contains('expand')) {
+        li.children[i].classList.toggle('show');
+        li.children[i].classList.toggle('hidden');
+      }
+    }
+    editElement.classList.toggle('show');
+    editElement.classList.toggle('hidden');
   }
 }
+
+/*
+let newTodo = {};
+    let id = event.target.parentNode.parentNode.parentNode.dataset.id;
+    let children = [...event.target.parentNode.childNodes];
+    let folderName;
+    console.log(id)
+    for (let i = 0; i < children.length; i++) {
+      if (children[i].className && children[i].className === 'new-todo-input') {
+        let key = children[i].id;
+        let val = children[i].value;
+        if (key === 'duedate') {
+          if (!checkDate(val)) {
+            alert('Please enter a valid date');
+            return;
+          }
+        }
+        newTodo[key] = val;
+      }
+    }
+    for (let i = 0; i < myFolders.length; i++) {
+      if (myFolders[i].id === id) {
+       folderName = myFolders[i].name;
+      }
+    }
+    newTodo.folder = folderName;
+    displayNewTodo(newTodo);
+  }
+  */

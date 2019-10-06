@@ -56,8 +56,9 @@ module.exports = {
   editTodo: function(folderId, todo) {
     // todo should be an obj
     let id = todo.id;
+    let editedTodo = {};
     let folder;
-    let todoIndex;
+    let todoIndex = -1;
 
     // Get the folder
     for (let i = 0; i < myFolders.length; i++) {
@@ -66,6 +67,8 @@ module.exports = {
         folder = myFolders[i];
       }
     }
+    console.log('folder')
+    console.log(folder);
 
     // Find todo based on the id
     for (let i = 0; i < folder.todos.length; i++) {
@@ -77,14 +80,22 @@ module.exports = {
     
     // Edit the todo
     for (let key in editedTodo) {
-      editedTodo[key] = todo[key];
+      if (key === '_dueDate') {
+        editedTodo[key] = todo['_duedate'];
+      } else {
+        editedTodo[key] = todo[key];
+      }
     }
+    editedTodo['_isComplete'] = false;
 
     // Remove todo from folder
-    folder.todos.splice(todoIndex, 1);
+    folder['todos'].splice(todoIndex, 1);
+    console.log('after splice')
+    console.log(folder)
     folder.todos = [...folder.todos, editedTodo];
+    console.log(folder);
 
-    // return todo
+    // return folders
     return myFolders;
   }
 }

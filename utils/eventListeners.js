@@ -16,6 +16,7 @@ const checkDate = require('./checkDate');
 // Actions
 const removeFolder = require('../actions/folderActions').removeFolder;
 const deleteTodo = require('../actions/todoActions').deleteTodo;
+const editTodo = require('../actions/todoActions').editTodo;
 
 module.exports = function(event) {
   // TODO eventListener
@@ -88,30 +89,38 @@ module.exports = function(event) {
     displayFolder();
   }
 
+  // DISPLAY edit-todo-form
   if (event.target && event.target.classList.contains('edit-todo')) {
-    let li = event.target.parentNode.parentNode;
-    let editElement;
-    let ul = li.parentNode;
-    let id = li.dataset.id;
-
-    for (let i = 0; i < li.children.length; i++) {
-      if (li.children[i].classList.contains('edit-todo-form')) {
-        editElement = li.children[i];
-      }
-      if (li.children[i].classList.contains('expand')) {
-        li.children[i].classList.toggle('show');
-        li.children[i].classList.toggle('hidden');
-      }
-    }
-    editElement.classList.toggle('show');
-    editElement.classList.toggle('hidden');
-
-    displayEditTodo(ul);
+    displayEditTodo(event.target);
   }
 
+  // EDIT-TODO submit
   if (event.target && event.target.classList.contains('edit-todo-submit')) {
-    // let ul = event.target.parentNode.parentNode.parentNode.parentNode;
-    // folderId = ul.dataset.id;
-    // editTodo();
+    let form = event.target.parentNode;
+    let ul = form.parentNode.parentNode;
+    let todoId = form.parentNode.dataset.id;
+    let folderId = ul.dataset.id;
+    let editedTodo = {};
+
+    let formChildren = [...form.childNodes];
+    for (let i = 0; i < formChildren.length; i++) {
+      if (formChildren[i].className && formChildren[i].className === 'new-todo-input') {
+        let key = `_${formChildren[i].id}`;
+        let val = formChildren[i].value;
+        if (key === 'duedate') {
+          if (!checkDate(val)) {
+            alert('Please enter a valid date');
+            return;
+          }
+        }
+        editedTodo[key] = val;
+      }
+    }
+    editedTodo.id = todoId;
+    console.log('from eventlisteners')
+    console.log(editedTodo);
+
+    editTodo(folderId, editedTodo);
+    displayFolder();
   }
 }
