@@ -58,6 +58,7 @@ module.exports = {
     let id = todo.id;
     let editedTodo = {};
     let folder;
+    let newFolder;
     let todoIndex = -1;
 
     // Get the folder
@@ -80,20 +81,36 @@ module.exports = {
     
     // Edit the todo
     for (let key in editedTodo) {
-      if (key === '_dueDate') {
+      if (key === '_folder') {
+        if (editedTodo['_folder'] !== todo['_folder']) {
+          for (let i = 0; i < myFolders.length; i++) {
+            if (myFolders[i].name === todo['_folder']) {
+              newFolder = myFolders[i];
+            }
+          }
+          if (newFolder === undefined) {
+            alert('Folder does not exist');
+            return;
+          }
+        }
+        editedTodo[key] = todo[key];
+      } else if (key === '_dueDate') {
         editedTodo[key] = todo['_duedate'];
       } else {
         editedTodo[key] = todo[key];
       }
     }
     editedTodo['_isComplete'] = false;
+    console.log('from todoActions')
+    console.log(editedTodo);
 
     // Remove todo from folder
     folder['todos'].splice(todoIndex, 1);
-    console.log('after splice')
-    console.log(folder)
-    folder.todos = [...folder.todos, editedTodo];
-    console.log(folder);
+    if (newFolder !== undefined) {
+      newFolder.todos = [...newFolder.todos, editedTodo];
+    } else  {
+      folder.todos = [...folder.todos, editedTodo];
+    }
 
     // return folders
     return myFolders;
