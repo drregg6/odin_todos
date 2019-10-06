@@ -32,6 +32,7 @@ module.exports = function(event) {
   if (event.target && event.target.classList.contains('folder')) {
     let el = event.target;
     let name = el.innerText.toLowerCase();
+    console.log(el);
 
     displayFolder(name);
   }
