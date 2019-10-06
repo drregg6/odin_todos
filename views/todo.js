@@ -60,32 +60,3 @@ module.exports = {
     editElement.classList.toggle('hidden');
   }
 }
-
-/*
-let newTodo = {};
-    let id = event.target.parentNode.parentNode.parentNode.dataset.id;
-    let children = [...event.target.parentNode.childNodes];
-    let folderName;
-    console.log(id)
-    for (let i = 0; i < children.length; i++) {
-      if (children[i].className && children[i].className === 'new-todo-input') {
-        let key = children[i].id;
-        let val = children[i].value;
-        if (key === 'duedate') {
-          if (!checkDate(val)) {
-            alert('Please enter a valid date');
-            return;
-          }
-        }
-        newTodo[key] = val;
-      }
-    }
-    for (let i = 0; i < myFolders.length; i++) {
-      if (myFolders[i].id === id) {
-       folderName = myFolders[i].name;
-      }
-    }
-    newTodo.folder = folderName;
-    displayNewTodo(newTodo);
-  }
-  */

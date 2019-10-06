@@ -1,9 +1,3 @@
-/*
-
-This can probably be broken down even more
-
-*/
-
 // Variables
 const myFolders = require('./universalVar').folders;
 // Views
@@ -121,6 +115,6 @@ module.exports = function(event) {
     console.log(editedTodo);
 
     editTodo(folderId, editedTodo);
-    displayFolder();
+    displayFolder(); // this is not working -> something renders as undefined
   }
 }
