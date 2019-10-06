@@ -1,8 +1,8 @@
 const capitalize = require('./capitalize');
 
 module.exports = function(obj) {
-  let priority = capitalize(obj.priority);
-  let desc = obj.desc;
+  let priority = capitalize(obj._priority);
+  let desc = obj._desc;
 
   let div = document.createElement('div');
   div.classList.add('expand');

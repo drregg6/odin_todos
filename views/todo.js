@@ -12,8 +12,7 @@ module.exports = {
     let folder = form.folder.toLowerCase();
     addTodo(title, desc, duedate, priority, folder);
 
-    removeAllNodes(CONTENT);
-    CONTENT.appendChild(displayFolder());
+    displayFolder();
   },
 
   displayFullTodo: function(element) {

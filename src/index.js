@@ -91,5 +91,4 @@ document.addEventListener('click', function(event) {
 window.onload = function() {
   displayNav();
   displayFolder();
-  console.log(myFolders);
 }
