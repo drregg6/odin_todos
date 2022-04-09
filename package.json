@@ -15,7 +15,7 @@
     "webpack-cli": "^3.3.9"
   },
   "dependencies": {
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "uuid": "^3.3.3"
   }
 }
